@@ -27,7 +27,7 @@ def selection_sort(a):
 def insertion_sort(a):
     for i in range(1,len(a)):
         j = i
-        while (j > 0 and a[j] < a[j-1]):
+        while j > 0 and a[j] < a[j-1]:
             swap(a, j, j-1)
             j -= 1
 
