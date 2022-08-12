@@ -11,7 +11,7 @@ public class sort {
     // [lo,hi) subrange of array a.
     public static int minElement(int[] a, int lo, int hi) {
         int minIdx = lo;
-        for (int i = lo; i < hi; i++)
+        for (int i = lo+1; i < hi; i++)
             if (a[i] < a[minIdx])
                 minIdx = i;
         return minIdx;
@@ -29,8 +29,10 @@ public class sort {
     public static void insertionSort(int[] a) {
         for (int i = 1; i < a.length; i++) {
             int j = i;
-            while (j > 0 && a[j] < a[j-1])
+            while (j > 0 && a[j] < a[j-1]) {
                 swap(a, j, j-1);
+                j -= 1;
+            }
         }
     }
 
