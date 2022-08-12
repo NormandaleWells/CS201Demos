@@ -61,5 +61,9 @@ public class sort {
         b = copyArray(a);
         insertionSort(b);
         printArray(b);
+
+        // String[] weasleys = { "Bill", "Charlie", "Percy", "George", "Fred", "Ron", "Ginny" };
+        // insertionSort(weasleys);
+        // printArray(weasleys);
     }
 }

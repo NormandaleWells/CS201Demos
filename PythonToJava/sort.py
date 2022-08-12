@@ -43,3 +43,7 @@ if __name__ == "__main__":
     a = a1[:]
     insertion_sort(a)
     print(a)
+
+    weasleys = [ "Bill", "Charlie", "Percy", "George", "Fred", "Ron", "Ginny" ]
+    insertion_sort(weasleys)
+    print(weasleys)
