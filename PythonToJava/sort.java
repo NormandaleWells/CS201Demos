@@ -1,4 +1,4 @@
-public class sort {
+public class Sort {
     
     // swap two elements of the given array
     public static void swap(int[] a, int idx1, int idx2) {
