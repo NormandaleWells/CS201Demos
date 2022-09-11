@@ -13,6 +13,6 @@ public class CalcAverage3 {
         // output.  %d formats an integer, and %f formats a double.
         // By default, %f prints 6 digits.
         System.out.printf("Number of values: %d\n", values.length);
-        System.out.printf("Average value: %f", average);
+        System.out.printf("Average value: %f\n", average);
     }
 }
