@@ -9,10 +9,17 @@ public class ExploreBinarySearch {
 
     static int numChecks;
 
+    // This is a plain ol' binary search implementation; it returns an index
+    // idx such that a[idx] = value, or -1 if no element has the given value.
+    // If there are multiple elements with the value being searched, the
+    // actual index returned is effectively randomly chosen among the possible
+    // indices where that value may be found.
     static public int binarySearch(int[] a, int value) {
         int lo = 0;
         int hi = a.length;
         while (lo < hi) {
+            // Invariant: if the element is in the array, it
+            // is in the range [lo,hi).
             numChecks += 1;
             int mid = lo + (hi - lo) / 2;
             if (a[mid] < value) {
@@ -45,8 +52,8 @@ public class ExploreBinarySearch {
         return lo;
     }
 
-    // Return the index of the first element greater than
-    // or equal to the given value.
+    // Return the index of the first element strictly greater
+    // than the given value.
     public static int upperBound(int[] a, int value) {
         int lo = 0;
         int hi = a.length;
