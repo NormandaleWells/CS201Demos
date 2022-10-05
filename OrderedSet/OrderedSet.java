@@ -33,6 +33,18 @@ public class OrderedSet<T extends Comparable<T>> implements Set<T> {
         numElements = 0;
     }
 
+    // A private method is available to this class but is not
+    // visible to any other part of the program.  In this case,
+    // we're just wrapping the call to lowerBound().
+    // Also, this gives us only one place to document the oddity
+    // that the returned index may not be a valid index!  In
+    // the case where 'value' is greater than every set element,
+    // set.length will be returned, and the caller needs to
+    // guard against this case.
+    private int searchFor(T value) {
+        return BinarySearch.lowerBound(set, 0, numElements, value);
+    }
+
     @Override
     public void add(T value) {
         // lowerBound() returns the first index whose value is
@@ -51,8 +63,8 @@ public class OrderedSet<T extends Comparable<T>> implements Set<T> {
         // take advantage of the short-circuit evaluation of
         // the || operator; if the left-hand side is true, the
         // right-hand side is not evaluated.
-        int idx = BinarySearch.lowerBound(set, 0, numElements, value);
-        if (idx == numElements || set[idx] != value) {
+        int idx = searchFor(value);
+        if (idx == numElements || !set[idx].equals(value)) {
             set[numElements++] = value;
             ArrayUtils.rotateRight(set, idx, numElements);
         }
@@ -68,8 +80,8 @@ public class OrderedSet<T extends Comparable<T>> implements Set<T> {
         // can take advantage of the short-circuit evaluation used
         // by the && operator; if the left-hand side is false, it
         // does not evaluate the right-hand side.
-        int idx = BinarySearch.lowerBound(set, 0, numElements, value);
-        return idx != numElements && set[idx] == value;
+        int idx = searchFor(value);
+        return idx != numElements && set[idx].equals(value);
     }
 
     // Count the number of set elements in the range `[lo,hi)`.  Note
