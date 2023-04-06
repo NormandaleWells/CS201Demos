@@ -68,3 +68,24 @@ Elapsed time:   53.170 seconds.
 Reading integers from 1Mints.nodup.txt
 95092 of 1000000 integers were in the set
 Elapsed time:    0.137 seconds.
+
+===========================================================
+
+Here are the results from running this on an HP Pavilion laptop
+with a i7-1165G7 processor.
+
+Reading set from .\1Mints.txt
+Using UnorderedIntSet
+There were 48432 duplicate items.
+Elapsed time:   63.057 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:  124.228 seconds.
+
+Reading set from .\1Mints.txt
+Using OrderedIntSet
+There were 48432 duplicate items.
+Elapsed time:   50.179 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:    0.114 seconds.
