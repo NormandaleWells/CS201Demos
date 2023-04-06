@@ -23,9 +23,7 @@ Then copy UnorderedIntSet to OrderedIntSet and make the necessary
 changes to keep the array sorted.
 
 CheckDuplicates.java is included to demonstrate the performance
-different between ordered and unordered arrays.  createSet()
-needs to be modified to switch between ordered and unordered arrays.
-Yeah, this could be a command line parameter; maybe some day.
+different between ordered and unordered arrays.
 
 Here are the results from my (vintage 2016) laptop:
 
@@ -50,3 +48,23 @@ Elapsed time:    0.225 seconds.
 The set creation is about 25% faster, but the set searching is where the
 ordered arrays really shine, with a better than 1000x performance
 improvement on 1 million items.
+
+==============================
+
+Here are the results from a Microsoft Surface Laptop 4, with an i7-1185G7 processor
+
+Reading set from 1Mints.txt
+Using UnorderedIntSet
+There were 48432 duplicate items.
+Elapsed time:   68.835 seconds.
+Reading integers from 1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:  134.107 seconds.
+
+Reading set from 1Mints.txt
+Using OrderedIntSet
+There were 48432 duplicate items.
+Elapsed time:   53.170 seconds.
+Reading integers from 1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:    0.137 seconds.

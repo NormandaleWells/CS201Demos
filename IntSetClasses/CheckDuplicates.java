@@ -8,7 +8,7 @@ public class CheckDuplicates {
     // Read the set contents from the given file.  The file should
     // have a count of the number of integers in the set, followed
     // by the integers themselves.
-    private static Set createSet(String filename) {
+    private static Set createSet(String filename, boolean ordered) {
 
         System.out.printf("Reading set from %s\n", filename);
 
@@ -23,8 +23,10 @@ public class CheckDuplicates {
             // numToRead is an upper bound for the number of elements we
             // may have in the set, so we'll use that to initialize the
             // array containing the set.
-            // set = new UnorderedIntSet(numToRead);
-            set = new OrderedIntSet(numToRead);
+            if (ordered)
+                set = new OrderedIntSet(numToRead);
+            else
+                set = new UnorderedIntSet(numToRead);
     
             System.out.printf("Using %s\n", set.getClass().getName());
 
@@ -106,16 +108,21 @@ public class CheckDuplicates {
     public static void main(String[] args) {
 
         if (args.length == 0) {
-            System.out.println("usage: java CheckDuplicates <set> [<check>]");
+            System.out.println("usage: java CheckDuplicates <set> \"ordered\"|\"unordered\" [<check>]");
             System.out.println("    <set> is a file containing the set elements");
+            System.out.println("    \"ordered\"|\"unordered\" specifies the type of set to create");
             System.out.println("    <check> is a file containing the numbers to check");
             System.exit(0);
         }
 
-        Set set = createSet(args[0]);
+        boolean ordered = true;
+        if (args.length >= 2)
+            ordered = args[1].equals("ordered");
 
-        if (args.length > 1) {
-            check(set, args[1]);
+        Set set = createSet(args[0], ordered);
+
+        if (args.length > 2) {
+            check(set, args[2]);
         }
     }
 }
