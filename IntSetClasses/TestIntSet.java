@@ -36,6 +36,10 @@ public class TestIntSet {
                 int hi = sc.nextInt();
                 int c = set.countRange(lo, hi);
                 System.out.printf("There are %d elements in the set between %d and %d\n", c, lo, hi);
+            } else if (command.equals("size")) {
+                System.out.printf("There are %d items in the set.\n", set.size());
+            } else if (command.equals("empty")) {
+                System.out.printf("The set is %sempty.\n", set.isEmpty() ? "" : "not ");
             }
         }
 
