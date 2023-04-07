@@ -16,8 +16,8 @@ public class TestIntSet {
         Scanner sc = new Scanner(System.in);
 
         int maxElements = sc.nextInt();
-        Set set = new UnorderedIntSet(maxElements);
-        // Set set = new OrderedIntSet(maxElements);
+        // IntSet set = new UnorderedIntSet(maxElements);
+        IntSet set = new OrderedIntSet(maxElements);
 
         System.out.printf("Using %s\n", set.getClass().getName());
 
@@ -31,11 +31,6 @@ public class TestIntSet {
                 int n = sc.nextInt();
                 boolean b = set.contains(n);
                 System.out.printf("%d is%s in the set\n", n, b ? "" : " not");
-            } else if (command.equals("count")) {
-                int lo = sc.nextInt();
-                int hi = sc.nextInt();
-                int c = set.countRange(lo, hi);
-                System.out.printf("There are %d elements in the set between %d and %d\n", c, lo, hi);
             } else if (command.equals("size")) {
                 System.out.printf("There are %d items in the set.\n", set.size());
             } else if (command.equals("empty")) {

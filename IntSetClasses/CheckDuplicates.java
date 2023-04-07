@@ -8,11 +8,11 @@ public class CheckDuplicates {
     // Read the set contents from the given file.  The file should
     // have a count of the number of integers in the set, followed
     // by the integers themselves.
-    private static Set createSet(String filename, boolean ordered) {
+    private static IntSet createSet(String filename, boolean ordered) {
 
         System.out.printf("Reading set from %s\n", filename);
 
-        Set set = null;
+        IntSet set = null;
 
         try (FileInputStream setFile = new FileInputStream(filename)) {
 
@@ -65,7 +65,7 @@ public class CheckDuplicates {
     // check - check to see if the integers in the given file are in the set.
     // The file should have a count of the number of integers in the set, followed
     // by the integers themselves.
-    private static void check(Set set, String filename) {
+    private static void check(IntSet set, String filename) {
         System.out.printf("Reading integers from %s\n", filename);
 
         try (FileInputStream setFile = new FileInputStream(filename)) {
@@ -119,7 +119,7 @@ public class CheckDuplicates {
         if (args.length >= 2)
             ordered = args[1].equals("ordered");
 
-        Set set = createSet(args[0], ordered);
+        IntSet set = createSet(args[0], ordered);
 
         if (args.length > 2) {
             check(set, args[2]);

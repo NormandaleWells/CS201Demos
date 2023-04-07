@@ -12,7 +12,7 @@
 //  (2) No error checking is performed.
 //  (3) There is no way to iterate over the set elements.
 
-public class UnorderedIntSet implements Set {
+public class UnorderedIntSet implements IntSet {
 
     // instance variables
 
@@ -55,23 +55,6 @@ public class UnorderedIntSet implements Set {
         // We can find() to do the heavy lifting here.
         int idx = IntArrayUtils.find(set, 0, numElements, value);
         return idx != -1;
-    }
-
-    @Override
-    public int countRange(int lo, int hi) {
-        // Note that 'lo' and 'hi' are values here, rather
-        // than indices.  This is contrary to our usual
-        // usage (in which lo and hi are array indices),
-        // and therefore possibly confusing.  Sorry.
-        // Note that we cannot use IntArrayUtils.count()
-        // here, since that only counts occurrences of a
-        // specific value, so we'll need to loop over the
-        // array one by one.
-        int count = 0;
-        for (int i = 0; i < numElements; i++)
-            if (lo <= set[i] && set[i] < hi)
-                count++;
-        return count;
     }
 
     @Override

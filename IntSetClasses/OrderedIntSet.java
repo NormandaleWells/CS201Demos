@@ -16,7 +16,7 @@
 //  (2) No error checking is performed.
 //  (3) There is no way to iterate over the set elements.
 
-public class OrderedIntSet implements Set {
+public class OrderedIntSet implements IntSet {
 
     // instance variables
 
@@ -68,22 +68,6 @@ public class OrderedIntSet implements Set {
         // does not evaluate the right-hand side.
         int idx = IntBinarySearch.lowerBound(set, 0, numElements, value);
         return idx != numElements && set[idx] == value;
-    }
-
-    // Count the number of set elements in the range `[lo,hi)`.  Note
-    // that this is a half-open range, so `hi` is not part of the range.
-    @Override
-    public int countRange(int lo, int hi) {
-        // At first glance it would seem that we want to use upperBound
-        // when looking for the high end of the range, but remember that
-        // the range [lo,hi) is, itself, a half-open range, so we want
-        // to exclude any element with that value.  Since if the 'hi'
-        // value is in the set, upperBound() would return the index of
-        // the next element after it, leaving the one containing 'hi'
-        // with the range!
-        int hiIdx = IntBinarySearch.lowerBound(set, 0, numElements, hi);
-        int loIdx = IntBinarySearch.lowerBound(set, 0, numElements, lo);
-        return hiIdx - loIdx;
     }
 
     @Override
