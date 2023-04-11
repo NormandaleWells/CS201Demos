@@ -58,23 +58,6 @@ public class UnorderedIntSet implements IntSet {
     }
 
     @Override
-    public int countRange(int lo, int hi) {
-        // Note that 'lo' and 'hi' are values here, rather
-        // than indices.  This is contrary to our usual
-        // usage (in which lo and hi are array indices),
-        // and therefore possibly confusing.  Sorry.
-        // Note that we cannot use IntArrayUtils.count()
-        // here, since that only counts occurrences of a
-        // specific value, so we'll need to loop over the
-        // array one by one.
-        int count = 0;
-        for (int i = 0; i < numElements; i++)
-            if (lo <= set[i] && set[i] < hi)
-                count++;
-        return count;
-    }
-
-    @Override
     public int size() {
         return numElements;
     }

@@ -9,10 +9,6 @@ public interface IntSet {
     // otherwise.
     boolean contains(int value);
 
-    // Count the number of elements whose values lie
-    // in the half-open range [lo,hi).
-    int countRange(int lo, int hi);
-
     // Return the current size of the Set (that is,
     // the number of elements).
     int size();
