@@ -16,7 +16,7 @@
 //  (2) No error checking is performed.
 //  (3) There is no way to iterate over the set elements.
 
-public class OrderedIntSet implements Set {
+public class OrderedIntSet implements IntSet {
 
     // instance variables
 

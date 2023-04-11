@@ -1,4 +1,4 @@
-public interface Set {
+public interface IntSet {
 
     // Add an item to the set.  If this item already
     // exists, this is effectively ignored.

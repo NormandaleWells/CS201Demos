@@ -16,7 +16,7 @@ public class TestIntSet {
         Scanner sc = new Scanner(System.in);
 
         int maxElements = sc.nextInt();
-        Set set = new UnorderedIntSet(maxElements);
+        IntSet set = new UnorderedIntSet(maxElements);
         // Set set = new OrderedIntSet(maxElements);
 
         System.out.printf("Using %s\n", set.getClass().getName());
