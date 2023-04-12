@@ -89,3 +89,25 @@ Elapsed time:   50.179 seconds.
 Reading integers from .\1Mints.nodup.txt
 95092 of 1000000 integers were in the set
 Elapsed time:    0.114 seconds.
+
+===========================================================
+
+Here are the results of running this on my i7-9700 based
+desktop computer:
+
+Reading set from .\1Mints.txt
+Using UnorderedIntSet
+There were 48432 duplicate items.       
+Elapsed time:  108.772 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:  149.035 seconds.
+PS C:\GitHubRepos\CS201Demos\IntSetClasses> 
+
+Reading set from .\1Mints.txt
+Using OrderedIntSet
+There were 48432 duplicate items.
+Elapsed time:   61.523 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:    0.141 seconds.
