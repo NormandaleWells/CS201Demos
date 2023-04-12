@@ -30,6 +30,10 @@ public class TestSet {
                 int n = sc.nextInt();
                 boolean b = set.contains(n);
                 System.out.printf("%d is%s in the set\n", n, b ? "" : " not");
+            } else if (command.equals("size")) {
+                System.out.printf("There are %d items in the set.\n", set.size());
+            } else if (command.equals("empty")) {
+                System.out.printf("The set is %sempty.\n", set.isEmpty() ? "" : "not ");
             } else if (command.equals("count")) {
                 int lo = sc.nextInt();
                 int hi = sc.nextInt();
