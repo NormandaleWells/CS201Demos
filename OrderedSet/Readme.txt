@@ -50,3 +50,26 @@ Reading integers from .\1Mints.nodup.txt
 Elapsed time:    0.383 seconds.
 
 Yes, it took nearly 53 minutes to create a set of 1M integers.
+
+===============================================
+
+Results of running this on an i7-1165G7 based HP
+Pavilion laptop:
+
+Reading set from .\100Kints.txt
+Using OrderedSet
+File read, creating list of (up to) 100000 items
+There were 4886 duplicate items.
+Elapsed time:    3.767 seconds.
+Reading integers from .\100Kints.nodup.txt
+9536 of 100000 integers were in the set
+Elapsed time:    0.016 seconds.
+
+Reading set from .\1Mints.txt
+Using OrderedSet
+File read, creating list of (up to) 1000000 items
+There were 48432 duplicate items.
+Elapsed time: 2347.834 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:    0.353 seconds.
