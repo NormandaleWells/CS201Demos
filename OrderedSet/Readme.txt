@@ -12,7 +12,9 @@ parameters from int to T.
 
 (2) Added the type parameter to the class definition.
 Note that once we may the class generic, we don't have
-to mark the individual methods as generic.
+to mark the individual methods as generic.  Note also
+that the class type parameter may be more constrained
+than the interface type parameter.
 
 (3) Changed the int[] instance variable to a T[].
 
