@@ -24,7 +24,7 @@ public class OrderedSet<T extends Comparable<T>> implements Set<T> {
     // the result of the 'new' operator to T[], but you also
     // have to use @SuppressWarnings to tell the compiler "Yes,
     // I know I'm lying to you, but trust me, I'm a professional".
-    // Also, because we require the T implement the Comparable
+    // Also, because we require that T implement the Comparable
     // interface, we cannot create an array of Object, but rather
     // Comparable, since not every object is Comparable.
     @SuppressWarnings("unchecked")

@@ -25,3 +25,28 @@ type T rather than int where necessary
 Changing genericizing IntBinarySearch to create BinarySearch
 was done outside of class, but involved the same sorts of
 changes that were made to IntArrayUtils to create ArrayUtils.
+
+
+
+Results of running this on my i7-9700 based desktop computer:
+
+Reading set from .\100Kints.txt
+Using OrderedSet
+File read, creating list of (up to) 100000 items
+There were 4886 duplicate items.
+Elapsed time:    6.197 seconds.
+Reading integers from .\100Kints.nodup.txt
+9536 of 100000 integers were in the set
+Elapsed time:    0.023 seconds.
+
+
+Reading set from .\1Mints.txt
+Using OrderedSet
+File read, creating list of (up to) 1000000 items
+There were 48432 duplicate items.
+Elapsed time: 3168.079 seconds.
+Reading integers from .\1Mints.nodup.txt
+95092 of 1000000 integers were in the set
+Elapsed time:    0.383 seconds.
+
+Yes, it took nearly 53 minutes to create a set of 1M integers.

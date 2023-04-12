@@ -37,6 +37,8 @@ public class CheckDuplicates {
             }
             sc.close();
 
+            System.out.printf("File read, creating list of (up to) %d items\n", numToRead);
+
             // Add the elements to the set.  Note that we're only timing
             // this part of the process.
             Timer timer = new Timer();
